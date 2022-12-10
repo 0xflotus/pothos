@@ -10,6 +10,7 @@ import SchemaBuilder, {
 import { PrismaObjectFieldBuilder as InternalPrismaObjectFieldBuilder } from './field-builder';
 import { ModelLoader } from './model-loader';
 import { PrismaModelTypes } from './types';
+import { getModel, getRefFromModel } from './util/datamodel';
 import { getLoaderMapping, setLoaderMappings } from './util/loader-map';
 import { queryFromInfo, selectionStateFromInfo } from './util/map-query';
 
@@ -22,7 +23,7 @@ const pluginName = 'prisma' as const;
 
 export default pluginName;
 
-export { queryFromInfo };
+export { getModel, getRefFromModel, queryFromInfo };
 
 export type PrismaObjectFieldBuilder<
   Types extends SchemaTypes,
